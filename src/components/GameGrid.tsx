@@ -1,30 +1,14 @@
 import { useEffect, useState} from "react";
 import apiClient from "../services/apiClient";
-
-
-interface Game{
-    id:number;
-    name:string;
-    background_image:string
-}
-
-interface GamesData{
-    count:number;
-    results:Game[];
-}
+import useGame from "../hooks/useGame";
+import { Text } from "@chakra-ui/react";
+import { AxiosError, CanceledError } from "axios";
 
 function GameGrid(){
 
-    const [games,SetGame]= useState<Game[]>([]);
-    const [error,setError] = useState('');
- 
-    useEffect(()=>{
-        apiClient.get('/games')
-        .then(resp=>SetGame(resp.data.results))
-        .catch(err => setError(err.message));
-    },[]);
-
-
+   const {games,error} = useGame();
+    if(error)
+      return <>{error && <Text color="red">{error}</Text>}</>
 
     return<>
       <ul>
