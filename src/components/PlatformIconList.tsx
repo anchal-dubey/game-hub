@@ -24,8 +24,8 @@ function PlatformIconList({platforms}:Props){
         android:FaAndroid
     }
   return (
-    <HStack>
-    {platforms.map((platform)=> <Icon as={iconMap[platform.slug]}/>)}
+    <HStack marginY={2}>
+    {platforms.map((platform)=> <Icon color="gray.500" as={iconMap[platform.slug]}/>)}
     </HStack>
   )
 };
