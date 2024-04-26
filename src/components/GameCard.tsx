@@ -6,14 +6,13 @@ import OptimizeURL from "../services/OptimiszeURL";
 
 
 interface Props{
-   game: Game ,
-   key:number
+   game: Game;
 
 }
 
-function GameCard({game,key}:Props){
+function GameCard({game}:Props){
   return (
-        <Card key={game.id} borderRadius={10} overflow="hidden">
+        <Card>
             <Image src={OptimizeURL(game.background_image)}/>
             <CardBody>
                 <Heading fontSize={'2xl'} >{game.name}</Heading>
