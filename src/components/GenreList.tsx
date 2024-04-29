@@ -21,7 +21,7 @@ function GenreList({selectedGenre}:Props){
             <ListItem key={genre.id} paddingY='8px'>
                     <HStack >
                       <Image boxSize='32px' borderRadius={8} src={OptimizeURL(genre.image_background)}/>
-                      <Button variant='link' onClick={()=>selectedGenre(genre)} fontSize="large">{genre.name}</Button>
+                      <Button  variant='link' onClick={()=>selectedGenre(genre)} fontSize="md">{genre.name}</Button>
                   </HStack>
               </ListItem>
           ))}

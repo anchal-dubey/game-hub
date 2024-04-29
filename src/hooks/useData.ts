@@ -7,7 +7,7 @@ interface FetchResponse<T>{
     results:T[]
 }
 
-function useGame<T>(endpont:string,requestConfig?:AxiosRequestConfig,deps?:any[]){
+function useData<T>(endpont:string,requestConfig?:AxiosRequestConfig,deps?:any[]){
     const [data,SetData]= useState<T[]>([]);
     const [error,setError] = useState("");
     const [isLoading,setIsLoading] = useState(false);
@@ -32,6 +32,6 @@ function useGame<T>(endpont:string,requestConfig?:AxiosRequestConfig,deps?:any[]
     return {data,isLoading,error}
 };
 
-export default useGame;
+export default useData;
 
 
