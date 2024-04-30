@@ -7,11 +7,13 @@ import { Genre } from "./hooks/useGenre"
 import PlatformSelector from "./components/PlatformSelector"
 import { Platform } from "./hooks/useGame"
 import SortSeletor from "./components/SortSelector"
+import SearchInput from "./components/SearchInput"
 
 
 export interface GameQuery{
   genre:Genre|null;
   platform:Platform|null;
+  sortOrder:string;
 }
 
 function App() {
@@ -29,7 +31,7 @@ function App() {
   }}
   >
     <GridItem area="nav">
-      <NavBar/>
+      <NavBar onSearch={(searchText)=> console.log(searchText)}/>
     </GridItem>
       <Show above="lg">
         <GridItem area="aside"  paddingX={5}>
@@ -37,9 +39,10 @@ function App() {
             </GridItem>
       </Show>
     <GridItem area="main" >
+      
       <HStack paddingLeft={2} marginBottom={5}>
         <PlatformSelector selectedPlatform={gameQuery.platform} onSelectePlatform={(platform) => setGameQuery({...gameQuery,platform})}/>
-        <SortSeletor/>
+        <SortSeletor selectedOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder) => setGameQuery({...gameQuery,sortOrder})}/>
       </HStack>
       <GameGrid  gameQuery={gameQuery} />
     </GridItem>

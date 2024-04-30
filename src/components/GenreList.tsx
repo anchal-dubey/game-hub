@@ -20,9 +20,9 @@ function GenreList({selectedGenre,onSelectedGenre}:Props){
           <List>
           {data.map((genre)=> (
             <ListItem key={genre.id} paddingY='8px'>
-                    <HStack >
+                    <HStack spacing={3}>
                       <Image boxSize='32px' borderRadius={8} src={OptimizeURL(genre.image_background)}/>
-                      <Button fontWeight={genre.id === selectedGenre?.id ? 'bold':'normal' }  variant='link' onClick={()=>onSelectedGenre(genre)} fontSize="md">{genre.name}</Button>
+                      <Button fontWeight={genre.id === selectedGenre?.id ? 'bold':'normal' }  variant='link' onClick={()=>onSelectedGenre(genre)} fontSize="md" whiteSpace="wrap">{genre.name}</Button>
                   </HStack>
               </ListItem>
           ))}
