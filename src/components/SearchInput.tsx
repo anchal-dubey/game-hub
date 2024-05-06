@@ -15,10 +15,10 @@ function SearchInput({onSearch}:Props){
     }}>
         <InputGroup>
         <InputLeftElement children={<BsSearch/>}/>
-        <Input ref={ref} variant='filled' placeholder='search games...' borderRadius={20} />
+        <Input ref={ref} variant='filled' placeholder='search games...' borderRadius={30} />
         </InputGroup>
     </form>
   )
-};
+}
 
 export default SearchInput;

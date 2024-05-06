@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/apiClient";
-import { AxiosError, AxiosRequestConfig, CanceledError } from "axios";
+import { AxiosRequestConfig, CanceledError } from "axios";
 
 interface FetchResponse<T>{
     count:number;
@@ -30,7 +30,7 @@ function useData<T>(endpont:string,requestConfig?:AxiosRequestConfig,deps?:any[]
     },deps?[...deps]:[]);
     
     return {data,isLoading,error}
-};
+}
 
 export default useData;
 
