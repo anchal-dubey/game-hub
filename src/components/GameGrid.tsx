@@ -18,7 +18,7 @@ function GameGrid({ gameQuery }: Props) {
     return <Box padding="10px">
         {error && <Text color="red">{error.message}</Text>}
         <SimpleGrid
-            columns={{ sm: 1, xl: 4, lg: 3, md: 2 }}
+            columns={{ sm: 1, xl: 4, lg: 3}}
             spacing={3}
             
         >
@@ -37,7 +37,7 @@ function GameGrid({ gameQuery }: Props) {
             ))}
         </SimpleGrid>
 
-        <Button disabled={!hasNextPage} onClick={() =>fetchNextPage()} marginY={5}>{isFetchingNextPage?'Loading...':'Load More'}</Button>
+        <Button  onClick={() =>fetchNextPage()} marginY={5}>{isFetchingNextPage?'Loading...':'Load More'}</Button>
     </Box>
 
 
